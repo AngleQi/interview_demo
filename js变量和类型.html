@@ -20,6 +20,15 @@
  <p>1、基本（原始）类型有七种：Boolean，Strin，Number，bigInt，Null，Undefined，Symbol</p>
  <p>2、引用类型有一种：Object（在js中除了基本数据类型以外的都是对象，Data，function，Array，正则表达式都是对象）</p>
  <p>注意：Symbol是ES6引入的一种原始数据类型，表示独一无二的值。</p>
+ <p>拓展：关于null和undefined的区别和相似之处。</p>
+ <p>null：表示的是‘没有对象’，即该处不应该有值。（也可以理解，null是已经定义但是值为空，分配内存）</p>
+ <p>1、作为函数的参数，表示该函数的参数不是对象</p>
+ <p>2、作为对象原型链的终点</p>
+ <p>undefined：表示‘未定义’,一个特殊值，通常用于指示变量尚未赋值，其值就为undefined</p>
+ <p>1、变量被声明了，但没有赋值时，就等于undefined（较为常见）</p>
+ <p>2、调用函数时，应该提供的参数没有提供，该参数等于undefined</p>
+ <p>3、对象没有赋值的属性，该属性的值为undefined</p>
+ <p>4、函数没有返回值的时候，默认返回undefined</p>
 </body>
 <script>
     // 动态类型
@@ -45,5 +54,8 @@
    console.log("x的值是", x)  // 返回x的值是undefined
    // 数字类型：Number,是一种定义为64位双精度浮点型的数字数据类型
    // BigInt 类型：是js中的一个基础的数值类型，可以用任意精度表示整数
+   // String：字符串类型，用于表示文本数据，字符串的长度是它的元素的数量
+   // Symbol: 符号类型，是唯一的并且不可修改的，并且也可以用来作为Object的key的值
+  // 对象：是指内存中的可以被标识符引用的一块区域
 </script>
 </html>
