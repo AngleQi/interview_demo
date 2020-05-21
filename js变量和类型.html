@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h1>一、变量</h1>
+ <p>js的变量，说白了就是相当于一个存储数据的‘容器’。</p>
+ <p>注意：</p>
+ <p>1、变量名大小对大小写字母敏感；</p>
+ <p>2、变量名须以字母开头（也能以 $ 和 _ 符号开头，但是不建议）</p>
+ <h1>二、类型</h1>
+ <h3>动态类型：</h3>
+ <p>js是一种<strong>弱类型</strong>或者说<strong>动态</strong>语言。</p>
+ <p>这意味着你不用提前声明变量的类型，在程序运行过程中，类型会被自动确定。</p>
+ <p>这也意味着你可以使用同一个变量保存不同的数据类型：</p>
+ <h3>数据类型：</h3>
+ <p>js规定的数据类型有八种：Boolean，String，Number，Null，Undefined，bigInt，Symbol，Object</p>
+ <p>1、基本（原始）类型有七种：Boolean，Strin，Number，bigInt，Null，Undefined，Symbol</p>
+ <p>2、引用类型有一种：Object（在js中除了基本数据类型以外的都是对象，Data，function，Array，正则表达式都是对象）</p>
+ <p>注意：Symbol是ES6引入的一种原始数据类型，表示独一无二的值。</p>
+</body>
+<script>
+    // 动态类型
+    var foo = 42; // foo is a Number now
+    foo = "bar" // foo is a String now
+    foo = true; // foo is a Boolean now
+    // 数据类型
+    // 1、原始值：除Object以外的所有类型都是不可变的（值本身无法被改变）
+    // Boolean：布尔类型，布尔表示一个逻辑实体，可以有两个值:true和false
+    // JavaScript if 语句
+    if (true) {
+        console.log("布尔值判断条件被解释为 真");
+    } else {
+        console.log("布尔值判断条件被解释为 假");
+    }
+    // JavaScript for 循环
+    for(var i=0; i<4; i++) {
+        console.log("只有当布尔值判断条件为 真 的时候才，这段文字才会被打印");
+    }
+    // Null类型：Null类型只有一个值：null，通常来说，表示一个不存在或者无效的object或者地址引用
+   // undefined类型：一个没有被赋值的变量会有个默认值undefind
+   var x; // 创建一个变量，但并没有赋值
+   console.log("x的值是", x)  // 返回x的值是undefined
+   // 数字类型：Number,是一种定义为64位双精度浮点型的数字数据类型
+   // BigInt 类型：是js中的一个基础的数值类型，可以用任意精度表示整数
+</script>
+</html>
