@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--水平居中第一、二、五种,垂直居中第一、二、三种,水平垂直居中第一、二、三种-->
+<div class="parent">
+   <div class="child"></div>
+</div>
+
+<div class="triangle"></div>
+<!--水平居中第三、四、六种,垂直居中第四种-->
+<!--<div class="parent">-->
+<!--    <div class="between">-->
+<!--        <div class="child"></div>-->
+<!--    </div>-->
+<!--</div>-->
+<style type="text/css">
+    .parent {
+        color: #FFFFFF;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        background-color: #000000;
+    }
+
+    .child {
+        width: 50px;
+        height: 50px;
+        background-color: #26f12d;
+    }
+    /*水平居中*/
+
+    /*第一种：margin+width*/
+    /*.child {*/
+    /*    width: 50px;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+
+    /*第二种：text-align+inline-block*/
+    /*.parent {*/
+    /*    text-align: center;*/
+    /*}*/
+    /*.child {*/
+    /*    display: inline-block;*/
+    /*}*/
+
+    /*第三种：float+position,这种方法适用于多种场景（width不固定）*/
+    /*.between {*/
+    /*    position: relative;*/
+    /*    left: 50%;*/
+    /*    float: left;*/
+    /*}*/
+    /*.child {*/
+    /*    position: relative;*/
+    /*    right: 50%;*/
+    /*}*/
+
+    /*第四种： 这种方法适用于多种场景（width不固定）*/
+    /*.parent {*/
+    /*    position: relative;*/
+    /*}*/
+    /*.between {*/
+    /*    position: absolute;*/
+    /*    left: 50%;*/
+    /*}*/
+    /*.child {*/
+    /*    position: relative;*/
+    /*    right: 50%;*/
+    /*}*/
+
+    /*第五种：flex 这种方法适用于多种场景（width不固定）*/
+    /*.parent {*/
+    /*    display: -webkit-box;*/
+    /*    -webkit-box-pack: center;*/
+    /*    -webkit-box-orient: horizontal;*/
+    /*}*/
+    /*第六种：fit-content 这种方法适用于多种场景（width不固定）*/
+    /*.between {*/
+    /*    width: -webkit-fit-content;*/
+    /*    margin: 0 auto;*/
+    /*}*/
+
+
+    /*垂直居中*/
+
+    /*第一种：position 这种方法适用于已经知道width的盒子*/
+    /*.parent {*/
+    /*    position: relative;*/
+    /*    width: 200px;*/
+    /*    height: 200px;*/
+    /*}*/
+
+    /*.child {*/
+    /*    position: absolute;*/
+    /*    margin: 75px 0;*/
+    /*}*/
+
+    /*第二种：position+transform 这种方法适用于已经知道width的盒子*/
+    /*.parent {*/
+    /*    position: relative;*/
+    /*    width: 200px;*/
+    /*    height: 200px;*/
+    /*}*/
+
+    /*.child {*/
+    /*    position: absolute;*/
+    /*    top: 50%;*/
+    /*    transform: translate(0%, -50%);*/
+    /*}*/
+
+    /*第三种：flex布局 这种方法适用于多种场景（width不固定）*/
+    /*.parent {*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*}*/
+
+    /*第四种：table-cell布局 这种方法适用于多种场景（width不固定）*/
+    /*.parent {*/
+    /*    display: table;*/
+    /*}*/
+
+    /*.between {*/
+    /*    display: table-cell;*/
+    /*    vertical-align: middle;*/
+    /*}*/
+
+
+    /*水平垂直居中*/
+
+    /*第一种：position + transform*/
+    /*.parent {*/
+    /*    position: relative;*/
+    /*}*/
+
+    /*.child {*/
+    /*    position: absolute;*/
+    /*    left: 50%;*/
+    /*    top: 50%;*/
+    /*    transform: translate(-50%,-50%);*/
+    /*}*/
+
+    /*第二种：position + margin*/
+    /*.parent {*/
+    /*    position: relative;*/
+    /*}*/
+
+    /*.child {*/
+    /*    position: absolute;*/
+    /*    top: 0;*/
+    /*    bottom: 0;*/
+    /*    left: 0;*/
+    /*    right: 0;*/
+    /*    margin: auto;*/
+    /*}*/
+
+    /*第三种：position + margin为自身宽高的一半*/
+    .parent {
+        position: relative;
+    }
+
+    .child {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -25px;    /* 自身 height 的一半 */
+        margin-left: -25px;    /* 自身 width 的一半 */
+    }
+    /*三角形*/
+    .triangle{
+        width: 0;
+        height: 0;
+        border-top: 40px solid transparent;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 40px solid #ff0000;
+    }
+</style>
+</body>
+</html>

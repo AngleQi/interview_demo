@@ -5,7 +5,13 @@
     <title>Title</title>
 </head>
 <body>
-<p>构造函数：是一种特殊的方法。主要用来在创建对象时初始化对象。每个构造函数都有prototype（原型）属性。构造函数的出现是为了解决Object构造函数和字面量表示法不方便创建大量重复对象的问题。</p>
-<script type="text/javascript" src="js/prototype.js"></script>
+<p>构造函数：是一种特殊的方法。主要用来在创建对象时初始化对象。每个构造函数都有prototype（原型）属性。
+    构造函数的出现是为了解决Object构造函数和字面量表示法不方便创建大量重复对象的问题。</p>
+<p>1、原型：prototype</p>
+<p>每个构造函数在创建时都会自动创建一个prototype属性，我们可以在这个属性当中添加新的属性和方法，
+添加的属性和方法可以为这个函数所使用。将这个函数实例化后的实例也可以使用新添加的属性和方法。这个prototype
+属性指向的对象，包括自带的属性和我们添加的属性、方法，可以把它指向的对象的内容集合称为构造函数的原型</p>
+
+<script type="text/javascript" src="prototype.js"></script>
 </body>
 </html>
