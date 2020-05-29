@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style type="text/css">
+    .aside{
+        margin-bottom: 100px;
+        width: 100px;
+        height: 150px;
+        background: #f66;
+    }
+    .main {
+        margin-top: 100px;
+        height: 200px;
+        background: #fcc;
+    }
+    .text{
+        /*盒子main的外面包一个div，通过改变此div的属性使两个盒子分属于两个不同的BFC，以此来阻止margin重叠*/
+        overflow: hidden;  /*此时已经触发了BFC属性。*/
+    }
+    /*有一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度*/
+    .container{
+        width: 100%;
+        height: 200px;
+        margin-top: 100px;
+        position: relative;
+        background-color: black;
+    }
+    .header{
+        height: 100px;
+        background-color: #26f12d;
+    }
+    .footer{
+        position: absolute;
+        top: 100px;
+        bottom: 0;
+        left: 0;
+        background-color: #ffcccc;
+    }
+</style>
+
+<div class="aside"></div>
+<div class="text">
+    <div class="main"></div>
+</div>
+
+<div class="container">
+    <div class="header">header</div>
+    <div class="footer">footer</div>
+</div>
+</body>
+</html>
