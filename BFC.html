@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<style type="text/css">
+    .container {
+        border: 10px solid red;
+        /*对父元素设置BFC后, 这样的问题就解决了*/
+        overflow: hidden;
+    }
+    .inner {
+        /*设为浮动,会产生塌陷*/
+        float: left;
+        background: #08BDEB;
+        height: 100px;
+        width: 100px;
+    }
+    .container2 {
+        background-color: green;
+        overflow: hidden;
+        margin-top: 100px;
+    }
+
+    .inner2 {
+        background-color: lightblue;
+        margin: 10px 0;
+    }
+    .bfc{
+        overflow: hidden;
+    }
+</style>
+<!--1. 防止浮动导致父元素高度塌陷-->
+<div class="container">
+    <div class="inner"></div>
+</div>
+<!--2. 避免外边距折叠-->
+<!--两个块同一个BFC会造成外边距折叠，但如果对这两个块分别设置BFC，那么边距重叠的问题就不存在了。-->
+<!--三个元素的上下间隔都是10px, 因为三个元素同属于一个BFC-->
+<div class="container2">
+    <div class="inner2">1</div>
+    <div class="inner2">2</div>
+    <div class="inner2">3</div>
+</div>
+<!--明显地看到间隔变大了，而且是原来的两倍，符合我们的预期。-->
+<div class="container2">
+    <div class="inner2">1</div>
+    <div class="bfc">
+        <div class="inner2">2</div>
+    </div>
+    <div class="inner2">3</div>
+</div>
+</body>
+</html>
